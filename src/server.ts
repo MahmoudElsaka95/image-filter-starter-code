@@ -42,7 +42,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
         console.log('path  ' +  filteredpath);
         res.status(200).sendFile(filteredpath, function (err) { 
           if (err) { 
-            res.status(400).send(err);
+            res.status(500).send(err);
           } else { 
             files.push(filteredpath);
             deleteLocalFiles(files);
